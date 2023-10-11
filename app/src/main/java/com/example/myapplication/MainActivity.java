@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         miListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(view.getContext()., R.layout.activity_detail)
+                //Intent intent = new Intent(view.getContext()., R.layout.activity_detail)
             }
         });
     }
