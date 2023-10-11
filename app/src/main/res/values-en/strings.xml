@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="img_desc">Im a mountain</string>
+    <string name="button1">Button</string>
+    <string name="oncreate">OnCreate</string>
+    <string name="onstart">OnStart</string>
+    <string name="onresume">OnResume</string>
+    <string name="onrestart">OnRestart</string>
+    <string name="onpause">OnPause</string>
+    <string name="onstop">OnStop</string>
+    <string name="ondestroy">OnDestroy</string>
+    <string name="detail_nombre">Juan Guzman</string>
+    <string name="detail_fono">98899006655</string>
+    <string name="detail_email">micorreo@hotmail.com</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_elevation">5dp</dimen>
+    <dimen name="button1_elevation">11dp</dimen>
+    <dimen name="img1_elevation">4dp</dimen>
+    <dimen name="layout_elevation">0dp</dimen>
+</resources>

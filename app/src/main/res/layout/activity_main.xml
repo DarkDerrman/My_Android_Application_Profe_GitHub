@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="@dimen/layout_elevation"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/milista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="7dp"
+        >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="272dp"
+        android:layout_marginBottom="312dp"
+        android:elevation="@dimen/button1_elevation"
+        android:text="@string/button1"
+        android:translationX="300dp"
+        android:translationY="80dp"
+        android:translationZ="20dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:elevation="@dimen/text_elevation"
+        android:text="Hello World!"
+        android:translationX="200dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="261dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/img_desc"
+        android:elevation="@dimen/img1_elevation"
+        android:layout_below="@id/cvUno"
+        app:srcCompat="@drawable/_0151" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/cvUno">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imgcard1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:contentDescription="Imagen1"
+                android:src="@drawable/_0151"
+                android:scaleType="centerCrop"
+                />
+            <TextView
+                android:id="@+id/textcard1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Soy el texto"
+                android:layout_below="@+id/imgcard1"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textcard1"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

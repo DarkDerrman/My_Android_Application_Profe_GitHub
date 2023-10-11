@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Mi aplicación</string>
+    <string name="img_desc">soy una montaña</string>
+    <string name="button1">Botón</string>
+    <string name="oncreate">OnCreate</string>
+    <string name="onstart">OnStart</string>
+    <string name="onresume">OnResume</string>
+    <string name="onrestart">OnRestart</string>
+    <string name="onpause">OnPause</string>
+    <string name="onstop">OnStop</string>
+    <string name="ondestroy">OnDestroy</string>
+    <string-array name="planetas">
+        <item>Mercurio</item>
+        <item>Venus</item>
+    </string-array>
+    <string name="detail_nombre">Juan Guzman</string>
+    <string name="detail_fono">98899006655</string>
+    <string name="detail_email">micorreo@hotmail.com</string>
+</resources>
