@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView miListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +25,18 @@ public class MainActivity extends AppCompatActivity {
         agregarFAB();
         Toast.makeText(this, getResources().getString(R.string.oncreate), Toast.LENGTH_LONG).show();
 
-        miListView = findViewById(R.id.milista);
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+        ListView miListView = findViewById(R.id.milista);
+        miListView.setAdapter(new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.planetas));
-        miListView.setAdapter(arrayAdapter);
+                getResources().getStringArray(R.array.planetas)));
 
         miListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Intent intent = new Intent(view.getContext()., R.layout.activity_detail)
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("Nombre", miListView.getItemAtPosition(position).toString());
+                startActivity(intent);
             }
         });
     }
