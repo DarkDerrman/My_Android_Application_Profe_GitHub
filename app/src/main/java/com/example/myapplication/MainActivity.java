@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -25,17 +27,27 @@ public class MainActivity extends AppCompatActivity {
         agregarFAB();
         Toast.makeText(this, getResources().getString(R.string.oncreate), Toast.LENGTH_LONG).show();
 
+        ArrayList<Contactos> contactos = new ArrayList<Contactos>();
+        contactos.add(new Contactos("Pedro", "Pedro House", "pedro@email.com"));
+        contactos.add(new Contactos("Juan", "Juan House", "juan@email.com"));
+        contactos.add(new Contactos("Diego", "Diego House", "diego@email.com"));
+        ArrayList<String> nombresContacto = new ArrayList<String>();
+
+        for (Contactos contacto: contactos
+             ) {
+            nombresContacto.add(contacto.getNombre());
+        }
         ListView miListView = findViewById(R.id.milista);
         miListView.setAdapter(new ArrayAdapter<String>(
                 this,
                 android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.planetas)));
+                nombresContacto));
 
         miListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
-                intent.putExtra("Nombre", miListView.getItemAtPosition(position).toString());
+                intent.putExtra("contacto", contactos.get(position));
                 startActivity(intent);
             }
         });

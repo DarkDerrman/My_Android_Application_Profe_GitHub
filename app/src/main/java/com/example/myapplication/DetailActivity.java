@@ -12,10 +12,17 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        Bundle parametros =  getIntent().getExtras();
-        String nombre = parametros.getString("Nombre");
+        //Bundle parametros =  getIntent().getExtras();
+        Contactos contacto = (Contactos) getIntent().getSerializableExtra("contacto");
+        //String nombre = parametros.getString("Nombre");
 
         TextView detailName = (TextView) findViewById(R.id.detailName);
-        detailName.setText(nombre);
+        detailName.setText(contacto.getNombre());
+
+        TextView detailAddr = (TextView) findViewById(R.id.detailAddr);
+        detailAddr.setText(contacto.getDireccion());
+
+        TextView detailEmail = (TextView) findViewById(R.id.detailEmail);
+        detailEmail.setText(contacto.getCorreo());
     }
 }

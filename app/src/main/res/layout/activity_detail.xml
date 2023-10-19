@@ -23,8 +23,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soy un Icono" />
+                android:text="Dirección" />
             <TextView
+                android:id="@+id/detailAddr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_fono"
@@ -36,8 +37,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Soy un Icono" />
+                android:text="Correo" />
             <TextView
+                android:id="@+id/detailEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/detail_email"
