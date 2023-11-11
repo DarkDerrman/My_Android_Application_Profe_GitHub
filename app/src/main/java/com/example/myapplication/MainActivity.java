@@ -13,6 +13,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.myapplication.db.DataBase;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -27,10 +28,14 @@ public class MainActivity extends AppCompatActivity {
         agregarFAB();
         Toast.makeText(this, getResources().getString(R.string.oncreate), Toast.LENGTH_LONG).show();
 
-        ArrayList<Contactos> contactos = new ArrayList<Contactos>();
-        contactos.add(new Contactos("Pedro", "Pedro House", "pedro@email.com"));
-        contactos.add(new Contactos("Juan", "Juan House", "juan@email.com"));
-        contactos.add(new Contactos("Diego", "Diego House", "diego@email.com"));
+        //ArrayList<Contactos> contactos = new ArrayList<Contactos>();
+        //contactos.add(new Contactos("Pedro", "Pedro House", "pedro@email.com"));
+        //contactos.add(new Contactos("Juan", "Juan House", "juan@email.com"));
+        //contactos.add(new Contactos("Diego", "Diego House", "diego@email.com"));
+
+        DataBase db = new DataBase(MainActivity.this);
+        ArrayList<Contactos> contactos = db.obtenerContactos();
+
         ArrayList<String> nombresContacto = new ArrayList<String>();
 
         for (Contactos contacto: contactos
@@ -60,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Toast.makeText(getBaseContext(), "asd", Toast.LENGTH_SHORT).show();
                 Snackbar.make(view, "soy snack", Snackbar.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, FormActivity.class);
+                startActivity(intent);
             }
         });
     }
@@ -81,6 +88,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
         Toast.makeText(this, getResources().getString(R.string.onrestart), Toast.LENGTH_LONG).show();
+        DataBase db = new DataBase(MainActivity.this);
+        ArrayList<Contactos> contactos = db.obtenerContactos();
+
+        ArrayList<String> nombresContacto = new ArrayList<String>();
+
+        for (Contactos contacto: contactos
+        ) {
+            nombresContacto.add(contacto.getNombre());
+        }
+        ListView miListView = findViewById(R.id.milista);
+        miListView.setAdapter(new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                nombresContacto));
     }
 
     @Override
