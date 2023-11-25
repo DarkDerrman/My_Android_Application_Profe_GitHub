@@ -7,6 +7,7 @@
     tools:context=".FormActivity">
 
     <LinearLayout
+        android:id="@+id/llInitial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -70,5 +71,14 @@
             android:layout_marginTop="20dp"
             />
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvContactos"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/llInitial"
+        android:paddingTop="30dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
