@@ -7,6 +7,9 @@
     android:elevation="@dimen/layout_elevation"
     tools:context=".MainActivity">
 
+    <include layout="@layout/avtionbar"
+        android:id="@+id/miToolbar">
+    </include>
     <ListView
         android:id="@+id/milista"
         android:layout_width="match_parent"

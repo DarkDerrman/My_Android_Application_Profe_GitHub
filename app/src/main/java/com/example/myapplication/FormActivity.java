@@ -34,7 +34,7 @@ public class FormActivity extends AppCompatActivity {
     }
 
     public void inicializarAdaptador(){
-        ContactosAdaptador adaptador = new ContactosAdaptador(contactos);
+        ContactosAdaptador adaptador = new ContactosAdaptador(contactos, this);
         listaContactos.setAdapter(adaptador);
     }
 

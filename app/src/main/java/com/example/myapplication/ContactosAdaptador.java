@@ -1,9 +1,12 @@
 package com.example.myapplication;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,8 +15,10 @@ import java.util.ArrayList;
 
 public class ContactosAdaptador extends RecyclerView.Adapter<ContactosAdaptador.ContactosViewHolder>{
     private ArrayList<Contactos> contactos;
-    public ContactosAdaptador(ArrayList<Contactos> contactos){
+    private Activity activity;
+    public ContactosAdaptador(ArrayList<Contactos> contactos, Activity activity){
         this.contactos = contactos;
+        this.activity = activity;
     }
     @NonNull
     @Override
@@ -28,6 +33,16 @@ public class ContactosAdaptador extends RecyclerView.Adapter<ContactosAdaptador.
         contactosViewHolder.cvName.setText(contacto.getNombre());
         contactosViewHolder.cvDireccion.setText(contacto.getDireccion());
         contactosViewHolder.cvCorreo.setText(contacto.getCorreo());
+
+        contactosViewHolder.cvName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(activity, DetailActivity.class);
+                intent.putExtra("contacto", contacto);
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override
